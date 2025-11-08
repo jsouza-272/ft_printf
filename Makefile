@@ -27,19 +27,23 @@ OBJ_DIR = obj
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(MAKE) -C libft
-	$(AR) $(NAME) $(OBJ) libft/libft.a
+	@$(MAKE) -C libft
+	@$(AR) $(NAME) $(OBJ)
 
 $(OBJ_DIR):
-	mkdir $(OBJ_DIR)
+	@mkdir $(OBJ_DIR)
 
 $(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
-	$(CC) -c $< -o $@
+	@$(CC) -c $< -o $@
 
 clean:
+	@$(MAKE) clean -C libft
+	rm -rf $(OBJ_DIR)
 
+fclean: clean
+	@$(MAKE) fclean -C libft
+	@rm -f $(NAME)
 
-fclean:
-	$(MAKE) fclean -C libft
+re: fclean all
 
-re:
+.PHONY: all clean fclean re

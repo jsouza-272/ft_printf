@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 16:22:01 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/07 14:12:47 by jsouza           ###   ########.fr       */
+/*   Created: 2025/11/06 14:15:34 by jsouza            #+#    #+#             */
+/*   Updated: 2025/11/07 16:13:24 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+#define FT_PRINTF_H
 
-int	ft_putchar_fd(char c, int fd)
-{
-	int counter;
-	
-	counter = 0;
-	write(fd, &c, 1);
-	return(++counter);
-}
+#include <stdarg.h>
+
+int ft_printf(const char *s, ...);
+int ft_putnbr_base(int nbr, char * base);
+int ft_put_adrr(unsigned long nbr);
+
+#endif

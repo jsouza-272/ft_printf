@@ -31,14 +31,15 @@ int ft_putnbr_base(int nbr, char *base, int counter)
     return (++counter);
 }
 
-int ft_put_adrr(unsigned long nbr, int counter)
+int ft_put_adrr(void *nb, int counter)
 {
     char *base;
+    unsigned long *nbr;
     
     base = "0123456789abcdef";
-    
-    if (nbr >= 16)
-        counter = ft_put_adrr(nbr / 16, counter);
-    write(1, &base[nbr % 16], 1);
+    nbr = nb;
+    if (*nbr >= 16)
+        counter = ft_put_adrr((void *)(*nbr / 16), counter);
+    write(1, &base[*nbr % 16], 1);
     return (++counter);
 }

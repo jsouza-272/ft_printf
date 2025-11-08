@@ -41,7 +41,6 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@echo "	\033[1;38;2;246;255;100mDONE OBJ\033[0m"
 	@$(AR) $(NAME) $(OBJ)
-	@rm -rf $(OBJ_DIR)
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)

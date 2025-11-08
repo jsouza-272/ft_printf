@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:16:44 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/07 16:24:03 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/08 17:31:30 by jvlho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
-#include "printf.h"
+#include "ft_printf.h"
 
 int conversion(const char *s, va_list arg, int counter)
 {
     if (s[0] == 'c')
-        counter += ft_putchar_fd(va_arg(arg, char), 1);
+        counter += ft_putchar_fd(va_arg(arg, int), 1);
     else if (s[0] == 's')
         counter += ft_putstr_fd(va_arg(arg, char *), 1);
     else if (s[0] == 'p')
     {
         counter += ft_putstr_fd("0x", 1);
-        counter += ft_put_adrr(va_arg(arg, void *));
+        counter += ft_put_adrr(va_arg(arg, int));
     }
     else if (s[0] == 'd' || s[0] == 'i')
         counter += ft_putnbr_base(va_arg(arg, int), "0123456789");
@@ -50,7 +50,7 @@ int ft_printf(const char *s, ...)
     if (!s)
         return (-1);
     va_start(args, s);
-    while(s)
+    while(s[i])
     {
         if (s[i] == '%')
         {
