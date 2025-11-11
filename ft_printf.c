@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:16:44 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/08 17:31:30 by jvlho            ###   ########.fr       */
+/*   Updated: 2025/11/11 12:17:48 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,24 @@
 
 int conversion(const char *s, va_list arg, int counter)
 {
-    if (s[0] == 'c')
+    if (s[1] == 'c')
         counter += ft_putchar_fd(va_arg(arg, int), 1);
-    else if (s[0] == 's')
+    else if (s[1] == 's')
         counter += ft_putstr_fd(va_arg(arg, char *), 1);
-    else if (s[0] == 'p')
-    {
-        counter += ft_putstr_fd("0x", 1);
-        counter += ft_put_adrr(va_arg(arg, int));
-    }
-    else if (s[0] == 'd' || s[0] == 'i')
-        counter += ft_putnbr_base(va_arg(arg, int), "0123456789");
-    else if (s[0] == 'u')
-        counter += ft_putnbr_base(va_arg(arg, unsigned int), "0123456789");
-    else if (s[0] == 'x')
-        counter += ft_putnbr_base(va_arg(arg, int), "0123456789abcdef");
-    else if (s[0] == 'X')
-        counter += ft_putnbr_base(va_arg(arg, int), "0123456789ABCDEF");
-    else if (s[0] == '%')
+    else if (s[1] == 'd' || s[0] == 'i')
+        counter += ft_putnbr_fd(va_arg(arg, int), 1, counter);
+    else if (s[1] == 'p')
+        counter += ft_addr_check(va_arg(arg, void *), counter);
+    else if (s[1] == 'u')
+        counter += ft_putnbr_base(va_arg(arg, unsigned int), "0123456789", 
+        counter);
+    else if (s[1] == 'x')
+        counter += ft_putnbr_base(va_arg(arg, unsigned int), "0123456789abcdef", 
+        counter);
+    else if (s[1] == 'X')
+        counter += ft_putnbr_base(va_arg(arg, unsigned int), "0123456789ABCDEF", 
+        counter);
+    else if (s[0] == '%' || s[1] == '%')
         counter += ft_putchar_fd('%', 1);
     else 
         return (-1);
@@ -54,13 +54,15 @@ int ft_printf(const char *s, ...)
     {
         if (s[i] == '%')
         {
-            counter = conversion(&s[i + 1], args, counter);
-            if (counter == -1)
+            counter += conversion(&s[i], args, 0);
+            if (counter <= -1)
                 return (-1);
             i += 2;
         }
-        ft_putchar_fd(s[i++], 1);
-        counter++;
+        else
+            counter += ft_putchar_fd(s[i++], 1);
+        if (counter <= -1)
+            return (-1);
     }
     va_end(args);
     return(counter);

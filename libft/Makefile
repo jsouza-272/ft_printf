@@ -10,10 +10,7 @@
 # #
 #**************************************************************************** #
 
-NAME = libft.a
-
 CC = cc -Wall -Wextra -Werror
-AR = ar rcs
 
 SRC = ft_isalnum.c ft_isalpha.c ft_isdigit.c \
 	ft_isascii.c ft_isprint.c ft_strlen.c \
@@ -35,12 +32,7 @@ OBJ_DIR = obj
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
-all: $(NAME)
-	@echo "	\033[1;5;38;2;100;255;100mDONE $(NAME)\033[0m"
-
-$(NAME): $(OBJ)
-	@echo "	\033[1;38;2;246;255;100mDONE OBJ\033[0m"
-	@$(AR) $(NAME) $(OBJ)
+all: $(OBJ)
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
@@ -54,8 +46,6 @@ clean:
 	@echo "	\033[48;2;255;100;100;1;38mALL .o CLEAN\033[0m"
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo "	\033[48;2;255;0;0;1;38mBINARY CLEAN\033[0m"
 
 re: fclean all
 

@@ -6,29 +6,30 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 16:31:41 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/07 14:40:37 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/10 16:50:49 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr_fd(int n, int fd, int counter)
 {
 	long	nb;
 	char	s;
-	int counter;
 
 	nb = n;
-	counter = 0;
 	if (nb < 0)
 	{
-		write(fd, "-", 1);
+		if (write(fd, "-", 1) == -1)
+			return (-1);
 		nb *= -1;
+		counter++;
 	}
 	if (nb >= 10)
-		counter += ft_putnbr_fd(nb / 10, fd);
+		counter = ft_putnbr_fd(nb / 10, fd, counter);
 	nb = nb % 10;
 	s = nb + '0';
-	write(fd, &s, 1);
-	return (counter);
+	if (write(fd, &s, 1) == -1)
+		return (-1);
+	return (++counter);
 }
