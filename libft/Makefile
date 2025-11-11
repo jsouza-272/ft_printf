@@ -36,14 +36,12 @@ all: $(OBJ)
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
-	@echo "	\033[1;38;2;246;255;100mDONE OBJ_DIR\033[0m"
 
 $(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
 	@$(CC) -I . -c $< -o $@
 	
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "	\033[48;2;255;100;100;1;38mALL .o CLEAN\033[0m"
 
 fclean: clean
 

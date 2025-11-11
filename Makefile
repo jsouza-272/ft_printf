@@ -6,7 +6,7 @@
 #    By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 17:16:47 by jsouza            #+#    #+#              #
-#    Updated: 2025/11/11 16:11:23 by jsouza           ###   ########.fr        #
+#    Updated: 2025/11/11 16:24:51 by jsouza           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,7 @@ $(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
 
 clean:
 	@$(MAKE) clean -C libft
-	rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@$(MAKE) fclean -C libft
