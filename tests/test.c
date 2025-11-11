@@ -1,5 +1,7 @@
 #include <limits.h>
 #include <stdio.h>
+#define OK "\033[38;2;0;255;0m✓\033[0m"
+#define KO "\033[38;2;255;0;0m✗\033[0m"
 
 void	test_char(void)
 {
@@ -8,27 +10,27 @@ void	test_char(void)
 	printf("\n[Test 1] Regular character:\n");
 	ft = ft_printf("ft: '%c'\n", 'A');
 	or = printf("or: '%c'\n", 'A');
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 2] Digit character:\n");
 	ft = ft_printf("ft: '%c'\n", '5');
 	or = printf("or: '%c'\n", '5');
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 3] Space character:\n");
 	ft = ft_printf("ft: '%c'\n", ' ');
 	or = printf("or: '%c'\n", ' ');
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 4] Null character (\\0):\n");
 	ft = ft_printf("ft: '%c%c%c'\n", 'A', '\0', 'B');
 	or = printf("or: '%c%c%c'\n", 'A', '\0', 'B');
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 5] Special characters:\n");
 	ft = ft_printf("ft: '%c' '%c' '%c'\n", '\n', '\t', '\\');
 	or = printf("or: '%c' '%c' '%c'\n", '\n', '\t', '\\');
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 6] Multiple chars:\n");
 	ft = ft_printf("ft: %c %c %c %c %c\n", 'a', 'b', 'c', 'd', 'e');
 	or = printf("or: %c %c %c %c %c\n", 'a', 'b', 'c', 'd', 'e');
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 }
 
 void	test_string(void)
@@ -38,29 +40,29 @@ void	test_string(void)
 	printf("\n[Test 1] Regular string:\n");
 	ft = ft_printf("ft: '%s'\n", "Hello World");
 	or = printf("or: '%s'\n", "Hello World");
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 2] Empty string:\n");
 	ft = ft_printf("ft: '%s'\n", "");
 	or = printf("or: '%s'\n", "");
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 3] NULL string:\n");
 	ft = ft_printf("ft: '%s'\n", NULL);
 	or = printf("or: '%s'\n", "(null)");
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 4] String with special chars:\n");
 	ft = ft_printf("ft: '%s'\n", "Hello\nWorld\ttab");
 	or = printf("or: '%s'\n", "Hello\nWorld\ttab");
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 5] Long string:\n");
 	ft = ft_printf("ft: '%s'\n",
 			"This is a very long string for testing purposes");
 	or = printf("or: '%s'\n",
 			"This is a very long string for testing purposes");
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 6] Multiple strings:\n");
 	ft = ft_printf("ft: %s %s %s\n", "one", "two", "three");
 	or = printf("or: %s %s %s\n", "one", "two", "three");
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 }
 
 void	test_pointer(void)
@@ -75,23 +77,23 @@ void	test_pointer(void)
 	printf("\n[Test 1] Valid pointer:\n");
 	ft = ft_printf("ft: %p\n", &x);
 	or = printf("or: %p\n", &x);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 2] NULL pointer:\n");
 	ft = ft_printf("ft: %p\n", NULL);
 	or = printf("or: %p\n", NULL);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 3] String pointer:\n");
 	ft = ft_printf("ft: %p\n", str);
 	or = printf("or: %p\n", str);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "--->\u2713" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 4] Multiple pointers:\n");
 	ft = ft_printf("ft: %p %p %p\n", &x, str, NULL);
 	or = printf("or: %p %p %p\n", &x, str, NULL);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "\033[38;2;0;255;0m✓\033[0m" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 5] Pointer address range:\n");
 	ft = ft_printf("ft: %p\n", (void *)0xFFFFFFFF);
 	or = printf("or: %p\n", (void *)0xFFFFFFFF);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 }
 
 void	test_integer(void)
@@ -101,31 +103,31 @@ void	test_integer(void)
 	printf("\n[Test 1] Positive number:\n");
 	ft = ft_printf("ft: %d %i\n", 42, 42);
 	or = printf("or: %d %i\n", 42, 42);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 2] Negative number:\n");
 	ft = ft_printf("ft: %d %i\n", -42, -42);
 	or = printf("or: %d %i\n", -42, -42);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 3] Zero:\n");
 	ft = ft_printf("ft: %d %i\n", 0, 0);
 	or = printf("or: %d %i\n", 0, 0);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 4] INT_MAX:\n");
 	ft = ft_printf("ft: %d\n", INT_MAX);
 	or = printf("or: %d\n", INT_MAX);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 5] INT_MIN:\n");
 	ft = ft_printf("ft: %d\n", INT_MIN);
 	or = printf("or: %d\n", INT_MIN);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 6] Multiple integers:\n");
 	ft = ft_printf("ft: %d %d %d %d %d\n", -100, -1, 0, 1, 100);
 	or = printf("or: %d %d %d %d %d\n", -100, -1, 0, 1, 100);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 7] Large numbers:\n");
 	ft = ft_printf("ft: %d %d\n", 999999, -999999);
 	or = printf("or: %d %d\n", 999999, -999999);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 }
 
 void	test_unsigned(void)
@@ -135,27 +137,27 @@ void	test_unsigned(void)
 	printf("\n[Test 1] Positive number:\n");
 	ft = ft_printf("ft: %u\n", 42);
 	or = printf("or: %u\n", 42);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 2] Zero:\n");
 	ft = ft_printf("ft: %u\n", 0);
 	or = printf("or: %u\n", 0);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 3] UINT_MAX:\n");
 	ft = ft_printf("ft: %u\n", UINT_MAX);
 	or = printf("or: %u\n", UINT_MAX);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 4] Large number:\n");
 	ft = ft_printf("ft: %u\n", 4000000000u);
 	or = printf("or: %u\n", 4000000000u);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 5] Multiple unsigned:\n");
 	ft = ft_printf("ft: %u %u %u\n", 0, 123, 999999);
 	or = printf("or: %u %u %u\n", 0, 123, 999999);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 6] Negative as unsigned (wraps):\n");
 	ft = ft_printf("ft: %u\n", -1);
 	or = printf("or: %u\n", -1);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 }
 
 void	test_hex(void)
@@ -165,43 +167,43 @@ void	test_hex(void)
 	printf("\n[Test 1] Lowercase hex - small number:\n");
 	ft = ft_printf("ft: %x\n", 42);
 	or = printf("or: %x\n", 42);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 2] Uppercase hex - small number:\n");
 	ft = ft_printf("ft: %X\n", 42);
 	or = printf("or: %X\n", 42);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 3] Lowercase hex - zero:\n");
 	ft = ft_printf("ft: %x\n", 0);
 	or = printf("or: %x\n", 0);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 4] Lowercase hex - 255 (ff):\n");
 	ft = ft_printf("ft: %x\n", 255);
 	or = printf("or: %x\n", 255);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 5] Uppercase hex - 255 (FF):\n");
 	ft = ft_printf("ft: %X\n", 255);
 	or = printf("or: %X\n", 255);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 6] Lowercase hex - large number:\n");
 	ft = ft_printf("ft: %x\n", 0xDEADBEEF);
 	or = printf("or: %x\n", 0xDEADBEEF);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 7] Uppercase hex - large number:\n");
 	ft = ft_printf("ft: %X\n", 0xDEADBEEF);
 	or = printf("or: %X\n", 0xDEADBEEF);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 8] Mixed case in same call:\n");
 	ft = ft_printf("ft: %x %X %x %X\n", 10, 10, 255, 255);
 	or = printf("or: %x %X %x %X\n", 10, 10, 255, 255);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 9] UINT_MAX in hex:\n");
 	ft = ft_printf("ft: %x\n", UINT_MAX);
 	or = printf("or: %x\n", UINT_MAX);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 10] Negative number as hex:\n");
 	ft = ft_printf("ft: %x\n", -1);
 	or = printf("or: %x\n", -1);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 }
 
 void	test_percent(void)
@@ -211,19 +213,19 @@ void	test_percent(void)
 	printf("\n[Test 1] Single percent:\n");
 	ft = ft_printf("ft: %%\n");
 	or = printf("or: %%\n");
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 2] Double percent:\n");
 	ft = ft_printf("ft: %%%%\n");
 	or = printf("or: %%%%\n");
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 3] Percent with text:\n");
 	ft = ft_printf("ft: 100%% complete\n");
 	or = printf("or: 100%% complete\n");
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 4] Multiple percents:\n");
 	ft = ft_printf("ft: %% %% %% %%\n");
 	or = printf("or: %% %% %% %%\n");
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 }
 
 void	test_mixed(void)
@@ -238,27 +240,27 @@ void	test_mixed(void)
 							100, 255, 255);
 	or = printf("or: %c %s %p %d %i %u %x %X %%\n", 'A', "test", &x, 42, -42,
 							100, 255, 255);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 2] Complex string:\n");
 	ft = ft_printf("ft: Name: %s, Age: %d, Score: %u, ID: %x\n", "John", 25, 95,
 							0xABC);
 	or = printf("or: Name: %s, Age: %d, Score: %u, ID: %x\n", "John", 25, 95,
 							0xABC);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 3] No formats (plain text):\n");
 	ft = ft_printf("ft: Hello World!\n");
 	or = printf("or: Hello World!\n");
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 4] Empty string:\n");
 	ft = ft_printf("\n");
 	or = printf("\n");
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 	printf("\n[Test 5] Many of same format:\n");
 	ft = ft_printf("ft: %d %d %d %d %d %d %d %d %d %d\n", 1, 2, 3, 4, 5, 6, 7,
 							8, 9, 10);
 	or = printf("or: %d %d %d %d %d %d %d %d %d %d\n", 1, 2, 3, 4, 5, 6, 7, 8,
 							9, 10);
-	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? "✓" : "✗");
+	printf("Return: ft=%d, or=%d %s\n", ft, or, ft == or ? OK : KO);
 }
 
 int	main(void)

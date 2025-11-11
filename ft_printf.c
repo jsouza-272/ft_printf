@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:16:44 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/11 14:11:16 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/11 14:28:31 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	conversion(const char *s, va_list arg, int counter)
 		counter = ft_putchar_fd(va_arg(arg, int), 1, counter);
 	else if (s[0] == '%' && s[1] == 's')
 		counter = ft_putstr_fd(va_arg(arg, char *), 1, counter);
-	else if (s[0] == '%' && (s[1] == 'd' || s[0] == 'i'))
+	else if (s[0] == '%' && (s[1] == 'd' || s[1] == 'i'))
 		counter = ft_putnbr_fd(va_arg(arg, int), 1, counter);
 	else if (s[0] == '%' && s[1] == 'p')
 		counter = ft_addr_check(va_arg(arg, void *), counter);
