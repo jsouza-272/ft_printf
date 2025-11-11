@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param s 
-/// @param f 
-/// @return 
+/// @brief
+/// @param s
+/// @param f
+/// @return
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
 	char	*str;

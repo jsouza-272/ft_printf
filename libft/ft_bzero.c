@@ -12,11 +12,11 @@
 
 #include <string.h>
 
-/// @brief  The  bzero() function erases the data in the n bytes of the memory 
-///starting at the location pointed toby s, by writing zeros 
+/// @brief  The  bzero() function erases the data in the n bytes of the memory
+/// starting at the location pointed toby s, by writing zeros
 ///(bytes containing '\0') to that area.
-/// @param s 
-/// @param n 
+/// @param s
+/// @param n
 void	ft_bzero(void *s, size_t n)
 {
 	size_t			i;

@@ -67,13 +67,13 @@ static char	**free_all(char **arr)
 /*free(arr[0])*/
 
 /// @brief Allocates memory (using malloc(3)) and returns an
-///array of strings obtained by splitting ’s’ using
-///the character ’c’ as a delimiter. The array must
-///end with a NULL pointer.
-/// @param s 
-/// @param c 
+/// array of strings obtained by splitting ’s’ using
+/// the character ’c’ as a delimiter. The array must
+/// end with a NULL pointer.
+/// @param s
+/// @param c
 /// @return The array of new strings resulting from the split.
-///NULL if the allocation fails.
+/// NULL if the allocation fails.
 char	**ft_split(const char *s, char c)
 {
 	char	**arr;

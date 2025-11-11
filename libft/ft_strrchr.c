@@ -26,10 +26,10 @@ static size_t	ft_strlen(const char *s)
 	return (l);
 }
 
-/// @brief 
-/// @param s 
-/// @param c 
-/// @return 
+/// @brief
+/// @param s
+/// @param c
+/// @return
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t			i;

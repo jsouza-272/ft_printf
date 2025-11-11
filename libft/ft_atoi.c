@@ -17,10 +17,10 @@ static int	whitespace(int c)
 	return ((c >= 9 && c <= 13) || c == 32);
 }
 
-/// @brief The  atoi() function converts the initial 
-///portion of the string pointed to by nptr to int.  
-///The behav‐ior is the same as
-/// @param nptr 
+/// @brief The  atoi() function converts the initial
+/// portion of the string pointed to by nptr to int.
+/// The behav‐ior is the same as
+/// @param nptr
 /// @return The converted value or 0 on error.
 int	ft_atoi(const char *nptr)
 {

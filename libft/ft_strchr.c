@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param s 
-/// @param c 
-/// @return 
+/// @brief
+/// @param s
+/// @param c
+/// @return
 char	*ft_strchr(const char *s, int c)
 {
 	size_t			i;

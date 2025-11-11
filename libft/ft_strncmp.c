@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param s1 
-/// @param s2 
-/// @param n 
-/// @return 
+/// @brief
+/// @param s1
+/// @param s2
+/// @param n
+/// @return
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;

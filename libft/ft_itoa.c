@@ -32,9 +32,9 @@ static size_t	int_len(long n)
 	return (i);
 }
 
-/// @brief 
-/// @param n 
-/// @return 
+/// @brief
+/// @param n
+/// @return
 char	*ft_itoa(int n)
 {
 	char	*str;

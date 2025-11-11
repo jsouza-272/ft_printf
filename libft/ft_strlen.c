@@ -12,9 +12,9 @@
 
 #include <string.h>
 
-/// @brief 
-/// @param s 
-/// @return 
+/// @brief
+/// @param s
+/// @return
 size_t	ft_strlen(const char *s)
 {
 	size_t	l;

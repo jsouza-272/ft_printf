@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param c 
-/// @return 
+/// @brief
+/// @param c
+/// @return
 int	ft_tolower(int c)
 {
 	if (!(c >= 65 && c <= 90))

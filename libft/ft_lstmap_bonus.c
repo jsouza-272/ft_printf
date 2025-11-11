@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param lst 
-/// @param f 
-/// @param del 
-/// @return 
+/// @brief
+/// @param lst
+/// @param f
+/// @param del
+/// @return
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*nhead;

@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param lst 
-/// @return 
+/// @brief
+/// @param lst
+/// @return
 int	ft_lstsize(t_list *lst)
 {
 	int	i;

@@ -13,9 +13,9 @@
 #include "libft.h"
 
 /// @brief Deletes and frees the given node and all its
-///successors, using the function ’del’ and free(3).
-///Finally, set the pointer to the list to NULL.
-/// @param lst 
+/// successors, using the function ’del’ and free(3).
+/// Finally, set the pointer to the list to NULL.
+/// @param lst
 /// @param del
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

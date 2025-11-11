@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param s 
-/// @return 
+/// @brief
+/// @param s
+/// @return
 char	*ft_strdup(const char *s)
 {
 	char	*dst;

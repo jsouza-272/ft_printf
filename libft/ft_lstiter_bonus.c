@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param lst 
-/// @param f 
+/// @brief
+/// @param lst
+/// @param f
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)

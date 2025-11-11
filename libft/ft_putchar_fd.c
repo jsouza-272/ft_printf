@@ -14,12 +14,12 @@
 
 int	ft_putchar_fd(char c, int fd)
 {
-	int counter;
-	
+	int	counter;
+
 	counter = 0;
 	if (write(fd, &c, 1) == -1)
-	{		
+	{
 		return (-1);
-	} 
-	return(++counter);
+	}
+	return (++counter);
 }

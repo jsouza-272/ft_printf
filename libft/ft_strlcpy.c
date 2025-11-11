@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param dst 
-/// @param src 
-/// @param size 
-/// @return 
+/// @brief
+/// @param dst
+/// @param src
+/// @param size
+/// @return
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;

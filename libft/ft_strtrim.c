@@ -66,10 +66,10 @@ static int	rigth_to_left(const char *s1, const char *set)
 	return (i);
 }
 
-/// @brief 
-/// @param s1 
-/// @param set 
-/// @return 
+/// @brief
+/// @param s1
+/// @param set
+/// @return
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	int		i;

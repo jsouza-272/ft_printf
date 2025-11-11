@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param c 
-/// @return 
+/// @brief
+/// @param c
+/// @return
 int	ft_toupper(int c)
 {
 	if (!(c >= 97 && c <= 122))

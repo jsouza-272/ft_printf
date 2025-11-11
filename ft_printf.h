@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+# define FT_PRINTF_H
 
-#include <stdarg.h>
+# include <stdarg.h>
 
-int ft_printf(const char *s, ...);
-int ft_putnbr_base(unsigned int nbr, char * base, int counter);
-int ft_put_adrr(void *nb, int counter);
-int ft_addr_check(void *nb, int counter);
+int	ft_printf(const char *s, ...);
+int	ft_putnbr_base(unsigned int nbr, char *base, int counter);
+int	ft_put_adrr(void *nb, int counter);
+int	ft_addr_check(void *nb, int counter);
 
 #endif

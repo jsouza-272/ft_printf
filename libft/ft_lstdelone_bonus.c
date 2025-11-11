@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param lst 
-/// @param del 
+/// @brief
+/// @param lst
+/// @param del
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst)

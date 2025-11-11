@@ -12,11 +12,11 @@
 
 #include <string.h>
 
-/// @brief 
-/// @param dest 
-/// @param src 
-/// @param n 
-/// @return 
+/// @brief
+/// @param dest
+/// @param src
+/// @param n
+/// @return
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t				i;

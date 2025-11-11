@@ -6,7 +6,7 @@
 #    By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 17:16:47 by jsouza            #+#    #+#              #
-#    Updated: 2025/11/11 12:06:33 by jsouza           ###   ########.fr        #
+#    Updated: 2025/11/11 13:20:04 by jsouza           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,4 +98,4 @@ test: all $(LIB_OBJ)
 	@rm -rf libft/obj
 	@rm -rf obj
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re

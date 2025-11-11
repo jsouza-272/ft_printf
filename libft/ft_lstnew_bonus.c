@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param content 
-/// @return 
+/// @brief
+/// @param content
+/// @return
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;

@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param lst 
-/// @param  
+/// @brief
+/// @param lst
+/// @param
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst)

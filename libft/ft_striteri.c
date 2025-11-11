@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param s 
-/// @param f 
+/// @brief
+/// @param s
+/// @param f
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;

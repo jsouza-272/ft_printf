@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-/// @brief 
-/// @param lst 
-/// @return 
+/// @brief
+/// @param lst
+/// @return
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)

@@ -31,10 +31,10 @@ int	ft_addr_check(void *nb, int counter)
 		return (write(1, "(nil)", 5));
 	counter += ft_putstr_fd("0x", 1);
 	counter = ft_put_adrr(nb, counter);
-    if(counter == -1)
-    {
-        return (-1);
-    }
+	if (counter == -1)
+	{
+		return (-1);
+	}
 	return (counter);
 }
 
