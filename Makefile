@@ -6,7 +6,7 @@
 #    By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 17:16:47 by jsouza            #+#    #+#              #
-#    Updated: 2025/11/11 13:20:04 by jsouza           ###   ########.fr        #
+#    Updated: 2025/11/11 13:43:23 by jsouza           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,7 +91,7 @@ fclean: clean
 re: fclean all
 
 test: all $(LIB_OBJ)
-	@$(CC) .test.c $(NAME) -o test
+	@cc tests/.test.c $(NAME) -o test
 	@./test
 	@rm -f test
 	@rm -f libftprintf.a

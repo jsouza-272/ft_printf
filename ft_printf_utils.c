@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 14:14:31 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/10 17:59:23 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/11 14:10:44 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_addr_check(void *nb, int counter)
 {
 	if (!nb)
 		return (write(1, "(nil)", 5));
-	counter += ft_putstr_fd("0x", 1);
+	counter = ft_putstr_fd("0x", 1, counter);
 	counter = ft_put_adrr(nb, counter);
 	if (counter == -1)
 	{

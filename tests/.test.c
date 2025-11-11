@@ -6,12 +6,12 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 11:34:02 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/11 12:23:27 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/11 14:13:28 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "ft_printf.h"
+#include "../libft/libft.h"
+#include "../ft_printf.h"
 
 #define OK "\033[38;2;0;255;0m✓\033[0m"
 #define KO "\033[38;2;255;0;0m✗\033[0m"
@@ -141,6 +141,14 @@ void test_string()
     printf("\t");
     fflush(stdout);
     f = ft_printf("%s%s%s%s", s, "oi", "olas", "zero");
+    printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
+
+    printf("\n\n\033[1;38;2;51;153;255m===================TEST%d===================\033[0m\n\n", i++);
+
+    o = printf("%%%");
+    printf("\t");
+    fflush(stdout);
+    f = ft_printf("%%%");
     printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
 /*
     UNDEFINED

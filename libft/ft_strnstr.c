@@ -6,17 +6,18 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:03:24 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/11 13:29:21 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/11 13:33:52 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/// @brief
-/// @param big
-/// @param little
-/// @param len
-/// @return
+/**
+ * @brief
+ * @param big
+ * @param little
+ * @param len
+ * @return */
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
