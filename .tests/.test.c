@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 11:34:02 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/12 09:43:51 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/12 15:34:39 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,7 +228,7 @@ void test_pointer()
     fflush(stdout);
     f = ft_printf("%p%p%p", s, &i, NULL);
     printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
-
+/* 
     printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     printf(RED"Close"CREST"\n");
@@ -238,7 +238,7 @@ void test_pointer()
     fflush(stdout);
     f = ft_printf("%p", s);
     fprintf(stderr, "\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
-    stdout = fopen("/dev/tty", "w");
+    stdout = fopen("/dev/tty", "w"); */
 }
 
 void test_decimal()
@@ -293,5 +293,5 @@ int main ()
     test_unsigned();
     test_hexa();
     test_uperhexa();
-    test_percent();    
+    test_percent();
 }
