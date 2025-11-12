@@ -27,8 +27,8 @@ int	ft_putnbr_base(unsigned int nbr, char *base, int counter)
 
 int	ft_addr_check(void *nb, int counter)
 {
-	int n;
-	
+	int	n;
+
 	if (!nb)
 	{
 		n = write(1, "(nil)", 5);

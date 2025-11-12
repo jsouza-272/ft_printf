@@ -61,8 +61,8 @@ int	ft_printf(const char *s, ...)
 			counter = ft_putchar_fd(s[i], 1, counter);
 		if (counter <= -1)
 			return (-1);
-        i++;
-    }
+		i++;
+	}
 	va_end(args);
 	return (counter);
 }
