@@ -6,7 +6,7 @@
 #    By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 17:16:47 by jsouza            #+#    #+#              #
-#    Updated: 2025/11/12 09:44:45 by jsouza           ###   ########.fr        #
+#    Updated: 2025/11/12 12:31:32 by jsouza           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,7 +91,7 @@ fclean: clean
 re: fclean all
 
 test: all $(LIB_OBJ)
-	@cc tests/.test.c $(NAME) -o test
+	@cc .tests/.test.c $(NAME) -o test
 	@./test
 	@rm -f test
 	@rm -f libftprintf.a
@@ -99,7 +99,7 @@ test: all $(LIB_OBJ)
 	@rm -rf obj
 
 test2: all $(LIB_OBJ)
-	@cc tests/test.c $(NAME) -o test
+	@cc .tests/test.c $(NAME) -o test
 	@./test
 	@rm -f test
 	@rm -f libftprintf.a
