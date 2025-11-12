@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 11:34:02 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/11 16:25:36 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/12 09:43:51 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void test_char()
 	printf(""HEAD"╚════════════════════════════════════════════════════╝"CREST"\n");
 
     int o=0, f=0, i=1;
-    printf("\n\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     o = printf("c");
     printf("\t");
@@ -43,7 +43,7 @@ void test_char()
     f = ft_printf("c");
     printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
 
-    printf("\n\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     o = printf("%c", c);
     printf("\t");
@@ -51,7 +51,7 @@ void test_char()
     f = ft_printf("%c", c);
     printf("\n\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
 
-    printf("\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     o = printf("%c", '\033');
     printf("\t");
@@ -59,7 +59,7 @@ void test_char()
     f = ft_printf("%c", '\033');
     printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
 
-    printf("\n\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     c = '\n';
     o = printf("%c", c);
@@ -68,7 +68,7 @@ void test_char()
     f = ft_printf("%c", c);
     printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
 
-    printf("\n\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     c = 'A';
     o = printf("%c %c %c", c, c, c);
@@ -77,7 +77,7 @@ void test_char()
     f = ft_printf("%c %c %c", c, c, c);
     printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
 
-    printf("\n\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     c = 'A';
     printf(RED"Close"CREST"\n");
@@ -99,7 +99,7 @@ void test_string()
 	printf(""HEAD"╚════════════════════════════════════════════════════╝"CREST"\n");
 
     int o=0, f=0, i=1;
-    printf("\n\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     o = printf("Hello World");
     printf("\t");
@@ -107,7 +107,7 @@ void test_string()
     f = ft_printf("Hello World");
     printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
 
-    printf("\n\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     o = printf("%s","Hello World");
     printf("\t");
@@ -115,7 +115,7 @@ void test_string()
     f = ft_printf("%s", "Hello World");
     printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
     
-    printf("\n\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     o = printf("ola%s", s);
     printf("\t");
@@ -123,7 +123,7 @@ void test_string()
     f = ft_printf("ola%s", s);
     printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
 
-    printf("\n\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     o = printf("%s", "");
     printf("\t");
@@ -131,7 +131,7 @@ void test_string()
     f = ft_printf("%s", "");
     printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
 
-    printf("\n\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     o = printf("%s", "Hello mundo caravan com K24 e zf8 essa linha e muito grande para fazer qualquer coisa");
     printf("\t");
@@ -139,7 +139,7 @@ void test_string()
     f = ft_printf("%s", "Hello mundo caravan com K24 e zf8 essa linha e muito grande para fazer qualquer coisa");
     printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
 
-    printf("\n\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     o = printf("%s%s%s%s", s, "oi", "olas", "zero");
     printf("\t");
@@ -148,7 +148,7 @@ void test_string()
     printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
 /*
     NAO SEI SE TESTA
-    printf("\n\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     o = printf("%%%");
     printf("\t");
@@ -157,7 +157,7 @@ void test_string()
     printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
 
     UNDEFINED
-    printf("\n\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
     
     s = "hello";
     printf(RED"Close"CREST"\n");
@@ -170,7 +170,7 @@ void test_string()
     stdout = fopen("/dev/tty", "w"); 
 
     TEST SEM AS FLAGS
-    printf("\n\n"CTST"===================TEST%d==================="CREST"\n\n", i++);
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
 
     o = printf("%s %yssring", "Hello mundo caravan com K24 ");
     printf("\t");
@@ -181,9 +181,64 @@ void test_string()
 
 void test_pointer()
 {
+    char *s = NULL;
     printf("\n"HEAD"╔════════════════════════════════════════════════════╗"CREST"\n");
 	printf(""HEAD"║                   TESTE POINTER                    ║"CREST"\n");
 	printf(""HEAD"╚════════════════════════════════════════════════════╝"CREST"\n");
+
+    int o=0, f=0, i=1;
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
+
+    o = printf("%p", s);
+    printf("\t");
+    fflush(stdout);
+    f = ft_printf("%p", s);
+    printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
+
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
+
+    o = printf("%p", NULL);
+    printf("\t");
+    fflush(stdout);
+    f = ft_printf("%p", NULL);
+    printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
+
+    s = "ola";
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
+
+    o = printf("%p", s);
+    printf("\t");
+    fflush(stdout);
+    f = ft_printf("%p", s);
+    printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
+
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
+
+    int l[] = {10, 20, 30};
+    o = printf("%p", &l);
+    printf("\t");
+    fflush(stdout);
+    f = ft_printf("%p", &l);
+    printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
+
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
+
+    o = printf("%p%p%p", s, &i, NULL);
+    printf("\t");
+    fflush(stdout);
+    f = ft_printf("%p%p%p", s, &i, NULL);
+    printf("\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
+
+    printf("\n\n"CTST" ===================TEST%d==================="CREST"\n\n", i++);
+
+    printf(RED"Close"CREST"\n");
+    fclose(stdout);
+    o = printf("%p", s);
+    printf("\t");
+    fflush(stdout);
+    f = ft_printf("%p", s);
+    fprintf(stderr, "\noriginal:%d\tCopia:%d\t%s\n", o, f, o == f ? OK : KO);
+    stdout = fopen("/dev/tty", "w");
 }
 
 void test_decimal()
